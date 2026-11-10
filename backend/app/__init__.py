@@ -18,6 +18,10 @@ def create_app():
     CORS(app)
     db.init_app(app)
 
+    with app.app_context():
+        from app import models
+        db.create_all()
+
     @app.route('/api/health', methods=['GET'])
     def health_check():
         return jsonify({'status': 'ok', 'message': 'Sneakers Shop API is running'}), 200

@@ -92,4 +92,3 @@ class Order(db.Model):
             'items_summary': self.items_summary,
             'created_at': self.created_at.strftime('%Y-%m-%d %H:%M')
         }
-
