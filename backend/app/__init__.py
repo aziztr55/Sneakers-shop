@@ -20,7 +20,9 @@ def create_app():
 
     with app.app_context():
         from app import models
+        from app.seed import seed_sneakers
         db.create_all()
+        seed_sneakers()
 
     @app.route('/api/health', methods=['GET'])
     def health_check():
