@@ -24,6 +24,9 @@ def create_app():
         db.create_all()
         seed_sneakers()
 
+    from app.auth_routes import auth_bp
+    app.register_blueprint(auth_bp)
+
     @app.route('/api/health', methods=['GET'])
     def health_check():
         return jsonify({'status': 'ok', 'message': 'Sneakers Shop API is running'}), 200
