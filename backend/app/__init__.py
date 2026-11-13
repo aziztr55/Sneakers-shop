@@ -25,7 +25,9 @@ def create_app():
         seed_sneakers()
 
     from app.auth_routes import auth_bp
+    from app.sneaker_routes import sneaker_bp
     app.register_blueprint(auth_bp)
+    app.register_blueprint(sneaker_bp)
 
     @app.route('/api/health', methods=['GET'])
     def health_check():
