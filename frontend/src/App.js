@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
 import { apiRequest } from './api';
 import './App.css';
 
@@ -58,11 +60,11 @@ function App() {
             />
             <Route
               path="/login"
-              element={<div><h2>Login Page (Coming in Step 10)</h2></div>}
+              element={<LoginPage onLoginSuccess={handleLoginSuccess} />}
             />
             <Route
               path="/register"
-              element={<div><h2>Register Page (Coming in Step 10)</h2></div>}
+              element={<RegisterPage onLoginSuccess={handleLoginSuccess} />}
             />
             <Route
               path="/cart"
