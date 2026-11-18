@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import CatalogPage from './pages/CatalogPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import { apiRequest } from './api';
@@ -51,12 +52,7 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={
-                <div>
-                  <h1>Sneakers Catalog</h1>
-                  <p>Browse our collection of lifestyle sneakers and football cleats.</p>
-                </div>
-              }
+              element={<CatalogPage />}
             />
             <Route
               path="/login"

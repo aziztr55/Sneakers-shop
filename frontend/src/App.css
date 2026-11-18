@@ -236,3 +236,177 @@ button {
   color: #ef4444;
   font-weight: 600;
 }
+
+/* Catalog Page */
+.hero-banner {
+  background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+  color: #ffffff;
+  padding: 36px 28px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.hero-banner h1 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.hero-banner p {
+  color: #d1d5db;
+  font-size: 1rem;
+  max-width: 600px;
+}
+
+.filters-bar {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #4b5563;
+  text-transform: uppercase;
+}
+
+.filter-pills {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.pill-btn {
+  background: #f3f4f6;
+  color: #374151;
+  border: 1px solid #e5e7eb;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.pill-btn.active {
+  background: #111827;
+  color: #ffffff;
+  border-color: #111827;
+}
+
+.search-box input {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  min-width: 210px;
+}
+
+.status-text {
+  text-align: center;
+  padding: 40px 0;
+  color: #6b7280;
+}
+
+.sneakers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+.sneaker-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.sneaker-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.sneaker-image-wrap {
+  position: relative;
+  height: 210px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.sneaker-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.category-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.sneaker-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.sneaker-brand {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #ef4444;
+  margin-bottom: 4px;
+}
+
+.sneaker-name {
+  font-size: 1.05rem;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.sneaker-desc {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.sneaker-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.sneaker-price {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #111827;
+}
