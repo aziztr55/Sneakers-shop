@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import SneakerModal from './components/SneakerModal';
 import CatalogPage from './pages/CatalogPage';
+import CartPage from './pages/CartPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import { apiRequest } from './api';
@@ -76,6 +77,21 @@ function App() {
     }
   };
 
+  const handleRemoveCartItem = async (itemId) => {
+    try {
+      await apiRequest(`/api/cart/${itemId}`, { method: 'DELETE' });
+      await fetchCart(user);
+      showToast('Item removed from cart.');
+    } catch (err) {
+      showToast(err.message);
+    }
+  };
+
+  const handleCheckoutSuccess = async () => {
+    await fetchCart(user);
+    showToast('Order placed successfully!');
+  };
+
   const totalCartCount = cartItems.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
@@ -101,7 +117,14 @@ function App() {
             />
             <Route
               path="/cart"
-              element={<div><h2>Shopping Cart (Coming in Step 13)</h2></div>}
+              element={
+                <CartPage
+                  user={user}
+                  cartItems={cartItems}
+                  onRemoveItem={handleRemoveCartItem}
+                  onCheckoutSuccess={handleCheckoutSuccess}
+                />
+              }
             />
           </Routes>
         </main>
