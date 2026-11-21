@@ -1,9 +1,11 @@
-const API_BASE = process.env.REACT_APP_API_URL || 'http://localhost:5000';
+const API_BASE =
+  process.env.REACT_APP_API_URL ||
+  (process.env.NODE_ENV === 'production' ? '' : 'http://localhost:5000');
 
 export function getImageUrl(imageUrl) {
   if (!imageUrl) return '';
   if (imageUrl.startsWith('http')) return imageUrl;
-  return `${API_BASE}${imageUrl}`;
+  return `${API_BASE}${encodeURI(imageUrl)}`;
 }
 
 export async function apiRequest(endpoint, options = {}) {
@@ -20,4 +22,3 @@ export async function apiRequest(endpoint, options = {}) {
   }
   return data;
 }
-

@@ -35,7 +35,7 @@ Before running the project, you need to have the following software installed:
    cd backend
    ```
 
-3. Set environment variables (e.g., `JWT_SECRET_KEY` in the `.env` file) for the Flask app.
+3. Set environment variables (e.g., `SECRET_KEY` in the `.env` file) for the Flask app.
 
 4. Run the Flask server:
    ```bash
